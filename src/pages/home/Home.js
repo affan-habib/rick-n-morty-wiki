@@ -1,9 +1,8 @@
 import React, { Suspense, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Box, Button, Typography } from "@mui/material";
-
-import Episodes from "../episodes/Episodes";
 import Locations from "../../views/locations/Locations";
+import Episodes from "../../views/episodes/Episodes";
 import { callApi } from "../../reducers/apiSlice";
 import Loader from "../../components/Loader";
 import Cast from "../../views/Cast/Cast";
