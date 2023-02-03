@@ -22,7 +22,10 @@ const Cast = () => {
       </Stack>
       <Stack direction="row" sx={{ overflowX: "scroll" }}>
         {character.results.map((el) => (
-          <Box sx={{ m: 2, border: 1, minWidth: 200 }}>
+          <Box
+            sx={{ m: 2, border: 1, minWidth: 200, cursor: "pointer" }}
+            onClick={() => navigate(`cast-details/${el.id}`)}
+          >
             <img src={el.image} width="100%" height="200px" />
             <Typography>{el.name}</Typography>
           </Box>

@@ -20,7 +20,7 @@ function Home() {
   return (
     <Suspense fallback={<Loader />}>
       <div className="Home">
-        <Box>
+        <Box m={2}>
           <Typography>The Rick & MORTY WIKI</Typography>
           <Button variant="outlined">Watch Now</Button>
           <Typography>

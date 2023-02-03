@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { selectApi } from "../../../reducers/apiSlice";
+import { selectApi } from "../../reducers/apiSlice";
 
 const Cast = () => {
   const navigate = useNavigate();
