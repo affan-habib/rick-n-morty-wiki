@@ -1,11 +1,12 @@
 import React, { Suspense, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Box, Button, Typography } from "@mui/material";
-import Cast from "../Cast/Cast";
+
 import Episodes from "../episodes/Episodes";
 import Locations from "../../views/locations/Locations";
 import { callApi } from "../../reducers/apiSlice";
 import Loader from "../../components/Loader";
+import Cast from "../../views/Cast/Cast";
 
 function Home() {
   const dispatch = useDispatch();
