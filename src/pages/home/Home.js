@@ -8,15 +8,6 @@ import Loader from "../../components/Loader";
 import Cast from "../../views/Cast/Cast";
 
 function Home() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(
-      callApi({
-        operationId: "character",
-        output: "character",
-      })
-    );
-  }, []);
   return (
     <Suspense fallback={<Loader />}>
       <div className="Home">

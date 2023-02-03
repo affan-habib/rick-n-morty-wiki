@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import { Route, Routes } from "react-router-dom";
 import AllCast from "./pages/allCast/AllCast";
 import { CastDetails } from "./pages/castDetails/CastDetails";
+import CustomCard from "./components/CustomCard";
 function App() {
   return (
     <Suspense fallback={<Loader />}>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/all-cast" element={<AllCast />} />
           <Route path="/cast-details/:id" element={<CastDetails />} />
+          <Route path="/components" element={<CustomCard />} />
         </Routes>
       </div>
     </Suspense>

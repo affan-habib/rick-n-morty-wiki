@@ -1,19 +1,28 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { selectApi } from "../../reducers/apiSlice";
+import { callApi, selectApi } from "../../reducers/apiSlice";
 
 const Cast = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      callApi({
+        operationId: "character",
+        output: "character",
+      })
+    );
+  }, []);
   const {
     character = {
       results: [],
       info: [],
     },
   } = useSelector(selectApi);
-  console.log(character);
+
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between">
