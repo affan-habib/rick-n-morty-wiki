@@ -5,6 +5,8 @@ import logo from "./assets/Logo.png";
 import Stack from "@mui/material/Stack";
 
 import Home from "./pages/home/Home";
+import { Route, Routes } from "react-router-dom";
+import AllCast from "./pages/home/allCast/AllCast";
 function App() {
   return (
     <Suspense fallback={<Loader />}>
@@ -12,7 +14,10 @@ function App() {
         <Stack alignItems="center" justifyContent="center">
           <img src={logo} className="logo" />
         </Stack>
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/all-cast" element={<AllCast />} />
+        </Routes>
       </div>
     </Suspense>
   );
