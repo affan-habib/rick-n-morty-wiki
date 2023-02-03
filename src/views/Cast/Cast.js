@@ -2,9 +2,11 @@ import { Button, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { selectApi } from "../../reducers/apiSlice";
 
 const Cast = () => {
+  const navigate = useNavigate();
   const {
     character = {
       results: [],
@@ -16,7 +18,7 @@ const Cast = () => {
     <Box>
       <Stack direction="row" justifyContent="space-between">
         <Typography sx={{ ml: 2 }}>Meet the Cast</Typography>
-        <Button>View All</Button>
+        <Button onClick={() => navigate("all-cast")}>View All</Button>
       </Stack>
       <Stack direction="row" sx={{ overflowX: "scroll" }}>
         {character.results.map((el) => (
