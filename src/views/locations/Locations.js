@@ -1,17 +1,25 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectApi } from "../../reducers/apiSlice";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { callApi, selectApi } from "../../reducers/apiSlice";
 
 const Locations = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      callApi({
+        operationId: "location",
+        output: "location",
+      })
+    );
+  }, []);
   const {
-    character = {
+    location = {
       results: [],
-      info: [],
     },
   } = useSelector(selectApi);
-  console.log(character);
+  console.log(location);
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between">
@@ -19,8 +27,9 @@ const Locations = () => {
         <Button>View All</Button>
       </Stack>
       <Stack direction="row" sx={{ overflowX: "scroll" }}>
-        {character.results.map((el) => (
+        {location.results.map((el) => (
           <Box sx={{ m: 2, border: 1, minWidth: 200 }}>
+            <Typography>#{el.id}</Typography>
             <Typography>{el.name}</Typography>
           </Box>
         ))}
