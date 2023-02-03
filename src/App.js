@@ -6,6 +6,10 @@ import { callApi } from "./reducers/apiSlice";
 import logo from "./assets/Logo.png";
 import Stack from "@mui/material/Stack";
 import { Box, Button, Typography } from "@mui/material";
+import Cast from "./pages/Cast/Cast";
+import Episodes from "./pages/episodes/Episodes";
+import Locations from "./views/locations/Locations";
+import Home from "./pages/home/Home";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,20 +26,7 @@ function App() {
         <Stack alignItems="center" justifyContent="center">
           <img src={logo} className="logo" />
         </Stack>
-        <Box>
-          <Typography>The Rick & MORTY WIKI</Typography>
-          <Button variant="outlined">Watch Now</Button>
-          <Typography>
-            Brilliant but boozy scientist Rick hijacks his fretful teenage
-            grandson, Morty, for wild escapades in other worlds and alternate
-            dimensions.
-          </Typography>
-        </Box>
-        <Box mt={4}>
-          <Typography>Meet the cast</Typography>
-          <Typography>Episodes</Typography>
-          <Typography>Locations</Typography>
-        </Box>
+        <Home />
       </div>
     </Suspense>
   );
