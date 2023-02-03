@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect } from "react";
+import "./App.css";
 import { useDispatch } from "react-redux";
 import Loader from "./components/Loader";
 import { callApi } from "./reducers/apiSlice";

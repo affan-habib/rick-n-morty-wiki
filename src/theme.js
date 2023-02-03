@@ -116,7 +116,7 @@ const rawTheme = createTheme({
             padding: "0 8px",
             marginLeft: -6,
             lineHeight: "1.4375em",
-            fontSize: 20
+            fontSize: 20,
           },
         },
       },
@@ -131,7 +131,6 @@ const rawTheme = createTheme({
   },
   typography: {
     htmlFontSize: 16,
-
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
@@ -140,60 +139,73 @@ const rawTheme = createTheme({
       fontWeight: 600,
       fontSize: "2.375rem",
       lineHeight: 1.21,
+      color: "white",
     },
     h2: {
       fontWeight: 600,
       fontSize: "1.875rem",
+      color: "white",
       lineHeight: 1.27,
     },
     h3: {
       fontWeight: 600,
+      color: "white",
       fontSize: "1.5rem",
       lineHeight: 1.33,
     },
     h4: {
+      color: "white",
       fontWeight: 600,
       fontSize: "1.25rem",
       lineHeight: 1.4,
     },
     h5: {
+      color: "white",
       fontWeight: 600,
       fontSize: "1rem",
       lineHeight: 1.5,
     },
     h6: {
+      color: "white",
       fontWeight: 400,
       fontSize: "0.875rem",
       lineHeight: 1.57,
     },
     caption: {
+      color: "white",
       fontWeight: 400,
       fontSize: "0.75rem",
       lineHeight: 1.66,
     },
     body1: {
+      color: "white",
       fontSize: "0.875rem",
       lineHeight: 1.57,
     },
     body2: {
+      color: "white",
       fontSize: "0.75rem",
       lineHeight: 1.66,
     },
     subtitle1: {
       fontSize: "0.875rem",
+      color: "white",
       fontWeight: 600,
       lineHeight: 1.57,
     },
     subtitle2: {
+      color: "white",
       fontSize: "0.75rem",
       fontWeight: 500,
       lineHeight: 1.66,
     },
     overline: {
+      color: "white",
       lineHeight: 1.66,
     },
     button: {
       textTransform: "capitalize",
+      color: "white",
     },
   },
 });
@@ -204,7 +216,7 @@ const theme = {
     ...rawTheme.palette,
     background: {
       ...rawTheme.palette.background,
-      default: rawTheme.palette.common.white,
+      default: "#1E1E1E",
       placeholder: grey[200],
     },
   },
