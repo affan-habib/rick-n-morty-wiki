@@ -1,12 +1,21 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Loader from "./components/Loader";
+import { callApi } from "./reducers/apiSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      callApi({
+        operationId: "character",
+        output: "character",
+      })
+    );
+  }, []);
   return (
     <Suspense fallback={<Loader />}>
-      <div className="App">
-        Starting here
-      </div>
+      <div className="App">Starting here</div>
     </Suspense>
   );
 }
