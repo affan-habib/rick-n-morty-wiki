@@ -5,10 +5,7 @@ import Loader from "./components/Loader";
 import { callApi } from "./reducers/apiSlice";
 import logo from "./assets/Logo.png";
 import Stack from "@mui/material/Stack";
-import { Box, Button, Typography } from "@mui/material";
-import Cast from "./pages/Cast/Cast";
-import Episodes from "./pages/episodes/Episodes";
-import Locations from "./views/locations/Locations";
+
 import Home from "./pages/home/Home";
 function App() {
   const dispatch = useDispatch();
