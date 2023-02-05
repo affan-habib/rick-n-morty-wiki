@@ -1,12 +1,10 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { callApi, selectApi } from "../../reducers/apiSlice";
 
 const Cast = () => {
   const [page, setPage] = useState(1);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
@@ -26,7 +24,15 @@ const Cast = () => {
   return (
     <Box m={2}>
       <Stack direction="row" justifyContent="space-between">
-        <Typography variant="h4">The Cast</Typography>
+        <Typography variant="h2">The Cast</Typography>
+        <Box>
+          <select>
+            <option value="charecter">Charecter</option>
+            <option value="location">Location</option>
+            <option value="episodes">Episodes</option>
+          </select>
+          <input type="text" />
+        </Box>
       </Stack>
       <Grid container spacing={2}>
         {character.results.map((el) => (

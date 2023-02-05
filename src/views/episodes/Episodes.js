@@ -23,8 +23,7 @@ const Episodes = () => {
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between">
-        <Typography sx={{ ml: 2 }}>Meet the Episodes</Typography>
-        <Button>View All</Button>
+        <Typography>Meet the Episodes</Typography>
       </Stack>
       <Stack direction="row" sx={{ overflowX: "scroll" }}>
         {episode.results.map((el) => (

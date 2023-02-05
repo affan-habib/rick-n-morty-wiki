@@ -12,13 +12,12 @@ function Home() {
     <Suspense fallback={<Loader />}>
       <div className="Home">
         <Box m={2}>
-          <Typography variant="h1">The Rick & MORTY WIKI</Typography>
-          <Button
-            startIcon={<PlayCircleOutlineIcon />}
-            sx={{ p: 2, fontSize: 24 }}
-          >
-            Watch Now
-          </Button>
+          <Typography variant="h1">
+            <span className="span-one">The</span> Rick{" "}
+            <span className="span-two">&</span>
+          </Typography>
+          <Typography variant="h1">MORTY WIKI</Typography>
+          <Button startIcon={<PlayCircleOutlineIcon />}>Watch Now</Button>
           <Typography>
             Brilliant but boozy scientist Rick hijacks his fretful teenage
             grandson, Morty, for wild escapades in other worlds and alternate
