@@ -62,31 +62,35 @@ export const CastDetails = () => {
           <Grid item md={4}>
             <img src={status} />
             <Typography>Status</Typography>
-            <Typography>{singleCharacter?.status}</Typography>
+            <Typography variant="h3">{singleCharacter?.status}</Typography>
           </Grid>
           <Grid item md={4}>
             <img src={species} />
             <Typography>Species</Typography>
-            <Typography>{singleCharacter?.species}</Typography>
+            <Typography variant="h3">{singleCharacter?.species}</Typography>
           </Grid>
           <Grid item md={4}>
             <img src={gender} />
             <Typography>Gender</Typography>
-            <Typography>{singleCharacter?.gender}</Typography>
+            <Typography variant="h3">{singleCharacter?.gender}</Typography>
           </Grid>
           <Grid item md={12}>
             <img src={origin} />
             <Typography>Origin</Typography>
-            <Typography>{singleCharacter?.origin?.name}</Typography>
+            <Typography variant="h3">
+              {singleCharacter?.origin?.name}
+            </Typography>
           </Grid>
           <Grid item md={12}>
             <img src={location} />
             <Typography>Last Known Location</Typography>
-            <Typography>{singleCharacter?.location?.name}</Typography>
+            <Typography variant="h3">
+              {singleCharacter?.location?.name}
+            </Typography>
           </Grid>
           <Grid item md={12}>
             <img src={episodes} />
-            <Typography>Episodes</Typography>
+            <Typography variant="h3">Episodes</Typography>
             <ul>
               {episode.results.map((el) => (
                 <li>{el.name}</li>
