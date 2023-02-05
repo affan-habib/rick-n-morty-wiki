@@ -32,10 +32,10 @@ const Episodes = () => {
       </Stack>
       <Stack direction="row" spacing={2} sx={{ overflowX: "hidden" }}>
         {episode.results.map((el) => (
-          <Box sx={{ border: 1, minWidth: 200 }}>
+          <Stack sx={{ border: 1, minWidth: 200, pl: 1 }} justifyContent="center">
             <Typography>{el.episode}</Typography>
             <Typography>{el.name}</Typography>
-          </Box>
+          </Stack>
         ))}
       </Stack>
     </Box>
