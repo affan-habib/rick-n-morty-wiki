@@ -8,11 +8,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { callApi, selectApi } from "../../reducers/apiSlice";
-
+import status from "../../assets/icons/Status.svg";
+import species from "../../assets/icons/Species.svg";
+import gender from "../../assets/icons/Gender.svg";
+import origin from "../../assets/icons/origin.svg";
+import location from "../../assets/icons/Location.svg";
+import episodes from "../../assets/icons/episodes.svg";
 export const CastDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const { loading, singleCharacter = {} } = useSelector(selectApi);
+  const {
+    loading,
+    singleCharacter = {},
+    episode = {
+      results: [],
+    },
+  } = useSelector(selectApi);
   useEffect(() => {
     dispatch(
       callApi({
@@ -21,7 +32,14 @@ export const CastDetails = () => {
       })
     );
   }, []);
-
+  useEffect(() => {
+    dispatch(
+      callApi({
+        operationId: "episode",
+        output: "episode",
+      })
+    );
+  }, []);
   return (
     <Grid container spacing={2} mt={4}>
       {loading && <Loader />}
@@ -42,28 +60,38 @@ export const CastDetails = () => {
       <Grid item md={6}>
         <Grid container spacing={2} direction="row">
           <Grid item md={4}>
+            <img src={status} />
             <Typography>Status</Typography>
             <Typography>{singleCharacter?.status}</Typography>
           </Grid>
           <Grid item md={4}>
+            <img src={species} />
             <Typography>Species</Typography>
             <Typography>{singleCharacter?.species}</Typography>
           </Grid>
           <Grid item md={4}>
+            <img src={gender} />
             <Typography>Gender</Typography>
             <Typography>{singleCharacter?.gender}</Typography>
           </Grid>
           <Grid item md={12}>
+            <img src={origin} />
             <Typography>Origin</Typography>
             <Typography>{singleCharacter?.origin?.name}</Typography>
           </Grid>
           <Grid item md={12}>
+            <img src={location} />
             <Typography>Last Known Location</Typography>
             <Typography>{singleCharacter?.location?.name}</Typography>
           </Grid>
           <Grid item md={12}>
+            <img src={episodes} />
             <Typography>Episodes</Typography>
-            <Typography>{singleCharacter?.location?.name}</Typography>
+            <ul>
+              {episode.results.map((el) => (
+                <li>{el.name}</li>
+              ))}
+            </ul>
           </Grid>
         </Grid>
       </Grid>
