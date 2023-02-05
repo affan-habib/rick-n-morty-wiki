@@ -13,7 +13,7 @@ function App() {
   const navigate = useNavigate();
   return (
     <Suspense fallback={<Loader />}>
-      <Container>
+      <Container sx={{ pb: 4 }}>
         <Stack
           alignItems="center"
           justifyContent="center"
