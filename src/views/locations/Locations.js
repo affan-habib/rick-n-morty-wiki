@@ -22,13 +22,12 @@ const Locations = () => {
   console.log(location);
   return (
     <Box>
-      <Stack direction="row" justifyContent="space-between">
-        <Typography sx={{ ml: 2 }}>Locations</Typography>
-        <Button>View All</Button>
+      <Stack direction="row" justifyContent="space-between" mb={2}>
+        <Typography>Locations</Typography>
       </Stack>
-      <Stack direction="row" sx={{ overflowX: "scroll" }}>
+      <Stack direction="row" spacing={2} sx={{ overflowX: "hidden" }}>
         {location.results.map((el) => (
-          <Box sx={{ m: 2, border: 1, minWidth: 200 }}>
+          <Box sx={{ border: 1, minWidth: 200 }}>
             <Typography>#{el.id}</Typography>
             <Typography>{el.name}</Typography>
           </Box>

@@ -53,6 +53,20 @@ const rawTheme = createTheme({
         },
       },
     },
+    MuiIconButton: {
+      defaultProps: {
+        disableRipple: true,
+        color: "primary",
+        // disableElevation: true,
+      },
+      styleOverrides: {
+        root: {
+          "&.Mui-disabled": {
+            color: "#dadada",
+          },
+        },
+      },
+    },
     MuiAutocomplete: {
       styleOverrides: {
         root: {
@@ -144,7 +158,7 @@ const rawTheme = createTheme({
     h2: {
       fontWeight: 600,
       fontSize: "1.875rem",
-      color: "white",
+      color: "#14D9E5",
       lineHeight: 1.27,
     },
     h3: {

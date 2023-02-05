@@ -1,8 +1,9 @@
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { callApi, selectApi } from "../../reducers/apiSlice";
-
+import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 const Cast = () => {
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Cast = () => {
 
   return (
     <Box m={2}>
-      <Stack direction="row" justifyContent="space-between">
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography variant="h2">The Cast</Typography>
         <Box>
           <select>
@@ -42,19 +43,26 @@ const Cast = () => {
           </Grid>
         ))}
       </Grid>
-      <Button
-        disabled={!character.info.prev || page == 1}
-        onClick={() => setPage(page - 1)}
-      >
-        Prev
-      </Button>
-      <Button>{page}</Button>
-      <Button
-        disabled={!character.info.next || page == character.info.pages}
-        onClick={() => setPage(page + 1)}
-      >
-        Next
-      </Button>
+      <Stack direction="row" justifyContent="center" alignItems="center">
+        <Box py={2}>
+          <span>Page</span>
+          <IconButton
+            disabled={!character.info.prev || page == 1}
+            onClick={() => setPage(page - 1)}
+            color="primary"
+          >
+            <ArrowCircleLeftIcon />
+          </IconButton>
+          <span>{page}</span>
+          <IconButton
+            disabled={!character.info.next || page == character.info.pages}
+            onClick={() => setPage(page + 1)}
+          >
+            <ArrowCircleRightIcon />
+          </IconButton>
+          <span>of {character.info.pages}</span>
+        </Box>
+      </Stack>
     </Box>
   );
 };

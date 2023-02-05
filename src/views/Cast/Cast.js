@@ -25,14 +25,16 @@ const Cast = () => {
 
   return (
     <Box>
-      <Stack direction="row" justifyContent="space-between">
-        <Typography sx={{ ml: 2 }}>Meet the Cast</Typography>
-        <Button onClick={() => navigate("all-cast")}>View All</Button>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
+        <Typography>Meet the Cast</Typography>
+        <Button variant="outlined" onClick={() => navigate("all-cast")}>
+          View All
+        </Button>
       </Stack>
-      <Stack direction="row" sx={{ overflowX: "scroll" }}>
+      <Stack direction="row" spacing={2} sx={{ overflowX: "hidden" }}>
         {character.results.map((el) => (
           <Box
-            sx={{ m: 2, border: 1, minWidth: 200, cursor: "pointer" }}
+            sx={{ border: 1, minWidth: 200, cursor: "pointer" }}
             onClick={() => navigate(`cast-details/${el.id}`)}
           >
             <img src={el.image} width="100%" height="200px" />

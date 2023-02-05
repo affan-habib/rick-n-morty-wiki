@@ -22,12 +22,17 @@ const Episodes = () => {
   }, []);
   return (
     <Box>
-      <Stack direction="row" justifyContent="space-between">
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        mb={2}
+      >
         <Typography>Meet the Episodes</Typography>
       </Stack>
-      <Stack direction="row" sx={{ overflowX: "scroll" }}>
+      <Stack direction="row" spacing={2} sx={{ overflowX: "hidden" }}>
         {episode.results.map((el) => (
-          <Box sx={{ m: 2, border: 1, minWidth: 200 }}>
+          <Box sx={{ border: 1, minWidth: 200 }}>
             <Typography>{el.episode}</Typography>
             <Typography>{el.name}</Typography>
           </Box>
