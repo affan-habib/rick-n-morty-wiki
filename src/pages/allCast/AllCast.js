@@ -29,7 +29,13 @@ const Cast = () => {
     <Box m={2}>
       {loading && <Loader />}
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Typography variant="h2">The Cast</Typography>
+        <Typography variant="h2">
+          {view == "character"
+            ? "The Cast"
+            : view == "location"
+            ? "All Locations"
+            : "Episodes"}
+        </Typography>
         <Box>
           <select
             onChange={(e) => {
