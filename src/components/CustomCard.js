@@ -8,7 +8,7 @@ const CustomCard = () => {
       bgcolor="white"
       width={400}
       sx={{ borderRadius: 1 }}
-      className="border-gradient-purple border-gradient"
+      className="border-gradient"
     >
       <img
         width="100%"

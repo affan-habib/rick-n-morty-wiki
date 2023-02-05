@@ -6,14 +6,19 @@ import Episodes from "../../views/episodes/Episodes";
 import { callApi } from "../../reducers/apiSlice";
 import Loader from "../../components/Loader";
 import Cast from "../../views/Cast/Cast";
-
+import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 function Home() {
   return (
     <Suspense fallback={<Loader />}>
       <div className="Home">
         <Box m={2}>
-          <Typography>The Rick & MORTY WIKI</Typography>
-          <Button variant="outlined">Watch Now</Button>
+          <Typography variant="h1">The Rick & MORTY WIKI</Typography>
+          <Button
+            startIcon={<PlayCircleOutlineIcon />}
+            sx={{ p: 2, fontSize: 24 }}
+          >
+            Watch Now
+          </Button>
           <Typography>
             Brilliant but boozy scientist Rick hijacks his fretful teenage
             grandson, Morty, for wild escapades in other worlds and alternate

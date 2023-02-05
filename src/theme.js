@@ -4,11 +4,8 @@ import {
   red,
   teal,
   deepPurple,
-  cyan,
   purple,
   brown,
-  blueGrey,
-  indigo,
   yellow,
 } from "@mui/material/colors";
 
@@ -16,7 +13,7 @@ const rawTheme = createTheme({
   palette: {
     primary: {
       light: brown[200],
-      main: brown[400],
+      main: "#14D9E6",
       dark: brown[900],
     },
     secondary: {
@@ -50,6 +47,9 @@ const rawTheme = createTheme({
         root: {
           borderRadius: 4,
           boxShadow: 0,
+          background:
+            "linear-gradient(99.46deg, #9DFE00 -10.9%, #14D9E6 97.14%)",
+          color: "#fff",
         },
       },
     },
@@ -137,7 +137,7 @@ const rawTheme = createTheme({
     fontWeightBold: 600,
     h1: {
       fontWeight: 600,
-      fontSize: "2.375rem",
+      fontSize: "128px",
       lineHeight: 1.21,
       color: "white",
     },
