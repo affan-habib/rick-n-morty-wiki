@@ -41,10 +41,11 @@ const rawTheme = createTheme({
     MuiButton: {
       defaultProps: {
         disableRipple: true,
+        variant:"contained"
         // disableElevation: true,
       },
       styleOverrides: {
-        root: {
+        contained: {
           borderRadius: 4,
           boxShadow: 0,
           background:
@@ -67,74 +68,7 @@ const rawTheme = createTheme({
         },
       },
     },
-    MuiAutocomplete: {
-      styleOverrides: {
-        root: {
-          "& .MuiOutlinedInput-root": {
-            padding: "3px 9px",
-          },
-        },
-        popupIndicator: {
-          width: "auto",
-          height: "auto",
-        },
-        clearIndicator: {
-          width: "auto",
-          height: "auto",
-        },
-      },
-    },
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: { borderRadius: "2px", background: "white" },
-        input: {
-          padding: "10px 12px 10px 12px",
-          borderRadious: 0,
-        },
-        notchedOutline: {
-          "& fieldset": {
-            borderRadius: `0 0 0 0`,
-          },
-        },
-        inputSizeSmall: {
-          padding: "7.5px 8px 7.5px 12px",
-        },
-        inputMultiline: {
-          padding: 0,
-        },
-      },
-    },
-    MuiTextField: {
-      defaultProps: {
-        variant: "filled",
-        InputLabelProps: {
-          shrink: true,
-        },
-        bgcolor: "white",
-        color: "error",
-      },
-    },
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          fontSize: "0.9rem",
-          textTransform: "uppercase",
-          fontWeight: 500,
-        },
-        outlined: {
-          lineHeight: "0.8em",
-          "&.MuiInputLabel-sizeSmall": {
-            lineHeight: "1em",
-          },
-          "&.MuiInputLabel-shrink": {
-            padding: "0 8px",
-            marginLeft: -6,
-            lineHeight: "1.4375em",
-            fontSize: 20,
-          },
-        },
-      },
-    },
+
     MuiPaper: {
       styleOverrides: {
         root: {

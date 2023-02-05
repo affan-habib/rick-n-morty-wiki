@@ -1,3 +1,7 @@
+import {
+  KeyboardDoubleArrowLeft,
+  KeyboardDoubleArrowRight,
+} from "@mui/icons-material";
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -17,11 +21,17 @@ export const CastDetails = () => {
   return (
     <Grid container spacing={2} mt={4}>
       <Grid item md={6}>
-        <Stack direction="column" alignItems="center">
-          <Typography>{cast.name}</Typography>
-          <img src={cast.image} height="200px" width="200px" />
-          <Button>Previous</Button>
-          <Button>Next</Button>
+        <Stack direction="column" alignItems="center" spacing={2}>
+          <Typography variant="h2">{cast.name}</Typography>
+          <img src={cast.image} height="auto" width="400px" />
+          <Stack direction="row" spacing={2}>
+            <Button size="small" startIcon={<KeyboardDoubleArrowLeft />}>
+              Previous
+            </Button>
+            <Button size="small" endIcon={<KeyboardDoubleArrowRight />}>
+              Next
+            </Button>
+          </Stack>
         </Stack>
       </Grid>
       <Grid item md={6}>

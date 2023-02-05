@@ -14,12 +14,16 @@ function Home() {
           <span className="span-two">&</span>
         </Typography>
         <Typography variant="h1">MORTY WIKI</Typography>
-        <Button startIcon={<PlayCircleOutlineIcon />}>Watch Now</Button>
-        <Typography>
-          Brilliant but boozy scientist Rick hijacks his fretful teenage
-          grandson, Morty, for wild escapades in other worlds and alternate
-          dimensions.
-        </Typography>
+        <Stack direction="row" spacing={2} mx={4}>
+          <Button startIcon={<PlayCircleOutlineIcon />} variant="contained">
+            Watch Now
+          </Button>
+          <Typography>
+            Brilliant but boozy scientist Rick hijacks his fretful teenage
+            grandson, Morty, for wild escapades in other worlds and alternate
+            dimensions.
+          </Typography>
+        </Stack>
       </Box>
       <Stack spacing={2}>
         <Cast />
