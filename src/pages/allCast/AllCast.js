@@ -4,19 +4,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { callApi, selectApi } from "../../reducers/apiSlice";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import Loader from "../../components/Loader";
 const Cast = () => {
   const [page, setPage] = useState(1);
+  const [view, setView] = useState("character");
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
       callApi({
-        operationId: `character/?page=${page}`,
-        output: "character",
+        operationId: `${view}/?page=${page}`,
+        output: "data",
       })
     );
-  }, [page]);
+  }, [page, view]);
   const {
-    character = {
+    loading,
+    data = {
       results: [],
       info: [],
     },
@@ -24,21 +27,29 @@ const Cast = () => {
 
   return (
     <Box m={2}>
+      {loading && <Loader />}
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography variant="h2">The Cast</Typography>
         <Box>
-          <select>
-            <option value="charecter">Charecter</option>
+          <select
+            onChange={(e) => {
+              setView(e.target.value);
+              setPage(1);
+            }}
+          >
+            <option value="character">Charecter</option>
             <option value="location">Location</option>
-            <option value="episodes">Episodes</option>
+            <option value="episode">Episodes</option>
           </select>
           <input type="text" />
         </Box>
       </Stack>
       <Grid container spacing={2}>
-        {character.results.map((el) => (
+        {data.results.map((el) => (
           <Grid item md={3}>
-            <img src={el.image} width="100%" height="200px" />
+            {view == "character" && (
+              <img src={el.image} width="100%" height="200px" />
+            )}
             <Typography>{el.name}</Typography>
           </Grid>
         ))}
@@ -47,7 +58,7 @@ const Cast = () => {
         <Box py={2}>
           <span>Page</span>
           <IconButton
-            disabled={!character.info.prev || page == 1}
+            disabled={!data.info.prev || page == 1}
             onClick={() => setPage(page - 1)}
             color="primary"
           >
@@ -55,12 +66,12 @@ const Cast = () => {
           </IconButton>
           <span>{page}</span>
           <IconButton
-            disabled={!character.info.next || page == character.info.pages}
+            disabled={!data.info.next || page == data.info.pages}
             onClick={() => setPage(page + 1)}
           >
             <ArrowCircleRightIcon />
           </IconButton>
-          <span>of {character.info.pages}</span>
+          <span>of {data.info.pages}</span>
         </Box>
       </Stack>
     </Box>
