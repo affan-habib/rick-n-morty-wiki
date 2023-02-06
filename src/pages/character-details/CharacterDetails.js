@@ -54,7 +54,9 @@ export const CharacterDetails = () => {
                 size="small"
                 disabled={id == 1}
                 startIcon={<KeyboardDoubleArrowLeft />}
-                onClick={() => navigate(`/character/details/${parseInt(id) - 1}`)}
+                onClick={() =>
+                  navigate(`/character/details/${parseInt(id) - 1}`)
+                }
               >
                 Previous
               </Button>
@@ -62,7 +64,9 @@ export const CharacterDetails = () => {
                 size="small"
                 disabled={id == 20}
                 endIcon={<KeyboardDoubleArrowRight />}
-                onClick={() => navigate(`/character/details/${parseInt(id) + 1}`)}
+                onClick={() =>
+                  navigate(`/character/details/${parseInt(id) + 1}`)
+                }
               >
                 Next
               </Button>
@@ -71,36 +75,36 @@ export const CharacterDetails = () => {
         </Grid>
         <Grid item md={6}>
           <Grid container spacing={2} direction="row">
-            <Grid item md={4}>
+            <Grid item md={4} className="commmon-design">
               <img src={status} />
               <Typography>Status</Typography>
               <Typography variant="h3">{singleCharacter?.status}</Typography>
             </Grid>
-            <Grid item md={4}>
+            <Grid item md={4} className="commmon-design">
               <img src={species} />
               <Typography>Species</Typography>
               <Typography variant="h3">{singleCharacter?.species}</Typography>
             </Grid>
-            <Grid item md={4}>
+            <Grid item md={4} className="commmon-design">
               <img src={gender} />
               <Typography>Gender</Typography>
               <Typography variant="h3">{singleCharacter?.gender}</Typography>
             </Grid>
-            <Grid item md={12}>
+            <Grid item md={12} className="commmon-design">
               <img src={origin} />
               <Typography>Origin</Typography>
               <Typography variant="h3">
                 {singleCharacter?.origin?.name}
               </Typography>
             </Grid>
-            <Grid item md={12}>
+            <Grid item md={12} className="commmon-design">
               <img src={location} />
               <Typography>Last Known Location</Typography>
               <Typography variant="h3">
                 {singleCharacter?.location?.name}
               </Typography>
             </Grid>
-            <Grid item md={12}>
+            <Grid item md={12} className="commmon-design">
               <img src={episodes} />
               <Typography variant="h3">Episodes</Typography>
               <ul>

@@ -73,3 +73,13 @@
   position: absolute;
   background-size: auto auto;
 }
+
+.commmon-design {
+  border: 1px solid green;
+  max-height: 300px;
+  overflow: hidden;
+  padding: 20px;
+}
+.commmon-design img {
+  height: 30px;
+}
