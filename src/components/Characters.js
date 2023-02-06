@@ -70,7 +70,7 @@ const Characters = () => {
         mb={2}
       >
         <Typography variant="h5">Meet the Characters</Typography>
-        <Button variant="outlined" onClick={() => navigate("all-characters")}>
+        <Button variant="outlined" onClick={() => navigate("characters")}>
           View All
         </Button>
       </Stack>
@@ -83,7 +83,7 @@ const Characters = () => {
         {character.results.map((el) => (
           <Box
             sx={{ border: 1, minWidth: 250, cursor: "pointer" }}
-            onClick={() => navigate(`Characters-details/${el.id}`)}
+            onClick={() => navigate(`character/details/${el.id}`)}
           >
             <img src={el.image} width="100%" height="200px" />
             <Typography>{el.name}</Typography>

@@ -21,8 +21,8 @@ function App() {
         </Stack>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/all-characters" element={<AllCast />} />
-          <Route path="/cast-details/:id" element={<CastDetails />} />
+          <Route path="/characters" element={<AllCast />} />
+          <Route path="/character/details/:id" element={<CastDetails />} />
         </Routes>
       </Suspense>
     </Box>
