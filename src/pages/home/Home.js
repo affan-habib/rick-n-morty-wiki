@@ -11,7 +11,7 @@ import gunImg from "../../assets/Gun.png";
 function Home() {
   return (
     <Suspense fallback={<Loader />}>
-      <Stack maxWidth={1470}>
+      <Stack>
         <Box sx={{ position: "relative" }}>
           <Typography variant="h1">
             <img src={bubbleImg} className="bubble" />

@@ -42,12 +42,13 @@
   z-index: 1;
   margin: 0;
   padding: 0;
-  top: 0;
+  top: -110px;
+  left: -160px;
 }
 .gun {
   position: absolute;
   top: 0;
   /* left: 50; */
-  right: 0;
+  right: -150px;
   z-index: -50;
 }
