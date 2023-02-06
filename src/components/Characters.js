@@ -77,13 +77,14 @@ const Characters = () => {
       <Stack
         direction="row"
         spacing={2}
-        sx={{ overflowX: "hidden"}}
+        sx={{ overflowX: "hidden" }}
         ref={elementRef}
       >
         {character.results.map((el) => (
           <Box
-            sx={{ border: 1, minWidth: 250, minHeight: 200, cursor: "pointer" }}
+            sx={{ minWidth: 250, minHeight: 200, cursor: "pointer" }}
             onClick={() => navigate(`character/details/${el.id}`)}
+            className="custom-border"
           >
             <img loading="lazy" src={el.image} width="100%" height="200px" />
             <Typography>{el.name}</Typography>

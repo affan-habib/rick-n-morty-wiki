@@ -61,7 +61,7 @@ const AllCharecters = () => {
       </Stack>
       <Grid container spacing={2}>
         {data.results.map((el) => (
-          <Grid item md={3}>
+          <Grid item md={3} className="custom-border">
             {view == "character" && (
               <Box
                 sx={{ cursor: "pointer", minHeight: "200px" }}

@@ -74,8 +74,9 @@ const Locations = () => {
       >
         {location.results.map((el) => (
           <Stack
-            sx={{ border: 1, minWidth: 250, p: 2 }}
+            sx={{ minWidth: 250, p: 2 }}
             justifyContent="center"
+            className="custom-border"
           >
             <Typography>#{el.id}</Typography>
             <Typography>{el.name}</Typography>
