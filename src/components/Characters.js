@@ -77,7 +77,7 @@ const Characters = () => {
       <Stack
         direction="row"
         spacing={2}
-        sx={{ overflowX: "hidden", position: "relative" }}
+        sx={{ overflowX: "hidden"}}
         ref={elementRef}
       >
         {character.results.map((el) => (
