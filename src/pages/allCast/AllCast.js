@@ -1,4 +1,11 @@
-import { Box, Grid, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { callApi, selectApi } from "../../reducers/apiSlice";
@@ -26,7 +33,7 @@ const Cast = () => {
   } = useSelector(selectApi);
 
   return (
-    <Box m={2}>
+    <Container maxWidth="xl" m={2}>
       {loading && <Loader />}
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography variant="h2">
@@ -80,7 +87,7 @@ const Cast = () => {
           <span>of {data.info.pages}</span>
         </Box>
       </Stack>
-    </Box>
+    </Container>
   );
 };
 

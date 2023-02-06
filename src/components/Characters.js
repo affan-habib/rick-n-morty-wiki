@@ -8,26 +8,27 @@ import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { callApi, selectApi } from "../../reducers/apiSlice";
+import { callApi, selectApi } from "../reducers/apiSlice";
 
-const Locations = () => {
+const Characters = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const elementRef = useRef(null);
   const [arrowDisable, setArrowDisable] = useState(true);
-  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
       callApi({
-        operationId: "location",
-        output: "location",
+        operationId: "character",
+        output: "character",
       })
     );
   }, []);
   const {
-    location = {
+    character = {
       results: [],
+      info: [],
     },
   } = useSelector(selectApi);
-
   const handleHorizantalScroll = (element, speed, distance, step) => {
     let scrollAmount = 0;
     const slideTimer = setInterval(() => {
@@ -43,11 +44,10 @@ const Locations = () => {
       }
     }, speed);
   };
-  console.log(location);
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box position="relative">
       <IconButton
-        sx={{ position: "absolute", top: 45, zIndex: 50, left: -30 }}
+        sx={{ position: "absolute", top: 150, zIndex: 50, left: -30 }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, -20);
         }}
@@ -56,34 +56,42 @@ const Locations = () => {
         <ArrowCircleLeft fontSize="large" />
       </IconButton>
       <IconButton
-        sx={{ position: "absolute", top: 45, zIndex: 50, right: -30 }}
+        sx={{ position: "absolute", top: 150, zIndex: 50, right: -30 }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, 20);
         }}
       >
         <ArrowCircleRight fontSize="large" />
       </IconButton>
-      <Stack direction="row" justifyContent="space-between" mb={2}>
-        <Typography variant="h5">Locations</Typography>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        mb={2}
+      >
+        <Typography variant="h5">Meet the Characters</Typography>
+        <Button variant="outlined" onClick={() => navigate("all-characters")}>
+          View All
+        </Button>
       </Stack>
       <Stack
         direction="row"
         spacing={2}
-        sx={{ overflowX: "hidden" }}
+        sx={{ overflowX: "hidden", position: "relative" }}
         ref={elementRef}
       >
-        {location.results.map((el) => (
-          <Stack
-            sx={{ border: 1, minWidth: 250, p: 2 }}
-            justifyContent="center"
+        {character.results.map((el) => (
+          <Box
+            sx={{ border: 1, minWidth: 250, cursor: "pointer" }}
+            onClick={() => navigate(`Characters-details/${el.id}`)}
           >
-            <Typography>#{el.id}</Typography>
+            <img src={el.image} width="100%" height="200px" />
             <Typography>{el.name}</Typography>
-          </Stack>
+          </Box>
         ))}
       </Stack>
     </Box>
   );
 };
 
-export default Locations;
+export default Characters;

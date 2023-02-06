@@ -61,4 +61,15 @@
   background-repeat: no-repeat;
   right: 0;
   bottom: 0;
+  height: auto;
+  background-position: bottom;
+  background-size: 500px;
+}
+.home-content-two {
+  background-image: url("./assets/homeTwo.png");
+  background-repeat: no-repeat;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  background-size: auto auto;
 }

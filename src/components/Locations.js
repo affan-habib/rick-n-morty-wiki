@@ -8,26 +8,26 @@ import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { callApi, selectApi } from "../../reducers/apiSlice";
+import { callApi, selectApi } from "../reducers/apiSlice";
 
-const Episodes = () => {
+const Locations = () => {
   const elementRef = useRef(null);
   const [arrowDisable, setArrowDisable] = useState(true);
-  const {
-    episode = {
-      results: [],
-      info: [],
-    },
-  } = useSelector(selectApi);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
       callApi({
-        operationId: "episode",
-        output: "episode",
+        operationId: "location",
+        output: "location",
       })
     );
   }, []);
+  const {
+    location = {
+      results: [],
+    },
+  } = useSelector(selectApi);
+
   const handleHorizantalScroll = (element, speed, distance, step) => {
     let scrollAmount = 0;
     const slideTimer = setInterval(() => {
@@ -43,6 +43,7 @@ const Episodes = () => {
       }
     }, speed);
   };
+  console.log(location);
   return (
     <Box sx={{ position: "relative" }}>
       <IconButton
@@ -62,13 +63,8 @@ const Episodes = () => {
       >
         <ArrowCircleRight fontSize="large" />
       </IconButton>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        mb={2}
-      >
-        <Typography variant="h5">Meet the Episodes</Typography>
+      <Stack direction="row" justifyContent="space-between" mb={2}>
+        <Typography variant="h5">Locations</Typography>
       </Stack>
       <Stack
         direction="row"
@@ -76,12 +72,12 @@ const Episodes = () => {
         sx={{ overflowX: "hidden" }}
         ref={elementRef}
       >
-        {episode.results.map((el) => (
+        {location.results.map((el) => (
           <Stack
             sx={{ border: 1, minWidth: 250, p: 2 }}
             justifyContent="center"
           >
-            <Typography>{el.episode}</Typography>
+            <Typography>#{el.id}</Typography>
             <Typography>{el.name}</Typography>
           </Stack>
         ))}
@@ -90,4 +86,4 @@ const Episodes = () => {
   );
 };
 
-export default Episodes;
+export default Locations;

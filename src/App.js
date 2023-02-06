@@ -1,19 +1,17 @@
-import React, { Suspense, useEffect } from "react";
-import "./App.css";
+import React, { Suspense } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Loader from "./components/Loader";
 import logo from "./assets/Logo.png";
-import Stack from "@mui/material/Stack";
+import { Box, Stack } from "@mui/material";
 import Home from "./pages/home/Home";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import "./App.css";
 import AllCast from "./pages/allCast/AllCast";
 import { CastDetails } from "./pages/castDetails/CastDetails";
-import CustomCard from "./components/CustomCard";
-import { Container } from "@mui/material";
 function App() {
   const navigate = useNavigate();
   return (
-    <Suspense fallback={<Loader />}>
-      <Container sx={{ pb: 4 }} maxWidth="xl">
+    <Box className="home-content home-content-two">
+      <Suspense fallback={<Loader />}>
         <Stack
           alignItems="center"
           justifyContent="center"
@@ -23,12 +21,11 @@ function App() {
         </Stack>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/all-cast" element={<AllCast />} />
+          <Route path="/all-characters" element={<AllCast />} />
           <Route path="/cast-details/:id" element={<CastDetails />} />
-          <Route path="/components" element={<CustomCard />} />
         </Routes>
-      </Container>
-    </Suspense>
+      </Suspense>
+    </Box>
   );
 }
 

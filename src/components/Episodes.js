@@ -8,27 +8,26 @@ import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { callApi, selectApi } from "../../reducers/apiSlice";
+import { callApi, selectApi } from "../reducers/apiSlice";
 
-const Cast = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+const Episodes = () => {
   const elementRef = useRef(null);
   const [arrowDisable, setArrowDisable] = useState(true);
-  useEffect(() => {
-    dispatch(
-      callApi({
-        operationId: "character",
-        output: "character",
-      })
-    );
-  }, []);
   const {
-    character = {
+    episode = {
       results: [],
       info: [],
     },
   } = useSelector(selectApi);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      callApi({
+        operationId: "episode",
+        output: "episode",
+      })
+    );
+  }, []);
   const handleHorizantalScroll = (element, speed, distance, step) => {
     let scrollAmount = 0;
     const slideTimer = setInterval(() => {
@@ -45,9 +44,9 @@ const Cast = () => {
     }, speed);
   };
   return (
-    <Box position="relative">
+    <Box sx={{ position: "relative" }}>
       <IconButton
-        sx={{ position: "absolute", top: 150, zIndex: 50, left: -30 }}
+        sx={{ position: "absolute", top: 45, zIndex: 50, left: -30 }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, -20);
         }}
@@ -56,7 +55,7 @@ const Cast = () => {
         <ArrowCircleLeft fontSize="large" />
       </IconButton>
       <IconButton
-        sx={{ position: "absolute", top: 150, zIndex: 50, right: -30 }}
+        sx={{ position: "absolute", top: 45, zIndex: 50, right: -30 }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, 20);
         }}
@@ -69,29 +68,26 @@ const Cast = () => {
         alignItems="center"
         mb={2}
       >
-        <Typography variant="h5">Meet the Cast</Typography>
-        <Button variant="outlined" onClick={() => navigate("all-cast")}>
-          View All
-        </Button>
+        <Typography variant="h5">Meet the Episodes</Typography>
       </Stack>
       <Stack
         direction="row"
         spacing={2}
-        sx={{ overflowX: "hidden", position: "relative" }}
+        sx={{ overflowX: "hidden" }}
         ref={elementRef}
       >
-        {character.results.map((el) => (
-          <Box
-            sx={{ border: 1, minWidth: 250, cursor: "pointer" }}
-            onClick={() => navigate(`cast-details/${el.id}`)}
+        {episode.results.map((el) => (
+          <Stack
+            sx={{ border: 1, minWidth: 250, p: 2 }}
+            justifyContent="center"
           >
-            <img src={el.image} width="100%" height="200px" />
+            <Typography>{el.episode}</Typography>
             <Typography>{el.name}</Typography>
-          </Box>
+          </Stack>
         ))}
       </Stack>
     </Box>
   );
 };
 
-export default Cast;
+export default Episodes;
