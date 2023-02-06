@@ -64,7 +64,7 @@ const Locations = () => {
         <ArrowCircleRight fontSize="large" />
       </IconButton>
       <Stack direction="row" justifyContent="space-between" mb={2}>
-        <Typography>Locations</Typography>
+        <Typography variant="h5">Locations</Typography>
       </Stack>
       <Stack
         direction="row"
@@ -74,7 +74,7 @@ const Locations = () => {
       >
         {location.results.map((el) => (
           <Stack
-            sx={{ border: 1, minWidth: 200, pl: 1 }}
+            sx={{ border: 1, minWidth: 250, p: 2 }}
             justifyContent="center"
           >
             <Typography>#{el.id}</Typography>

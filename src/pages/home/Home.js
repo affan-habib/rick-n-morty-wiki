@@ -13,7 +13,7 @@ function Home() {
     <Suspense fallback={<Loader />}>
       <Stack>
         <Box sx={{ position: "relative" }}>
-          <Typography variant="h1">
+          <Typography variant="h1" textAlign="center">
             <img src={bubbleImg} className="bubble" />
             <span className="span-one">The</span>
             <img src={portalImg} />
@@ -39,7 +39,7 @@ function Home() {
           </Stack>
         </Stack>
       </Stack>
-      <Stack spacing={2}>
+      <Stack spacing={2} className="home-content">
         <Cast />
         <Episodes />
         <Locations />

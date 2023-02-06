@@ -68,7 +68,7 @@ const Episodes = () => {
         alignItems="center"
         mb={2}
       >
-        <Typography>Meet the Episodes</Typography>
+        <Typography variant="h5">Meet the Episodes</Typography>
       </Stack>
       <Stack
         direction="row"
@@ -78,7 +78,7 @@ const Episodes = () => {
       >
         {episode.results.map((el) => (
           <Stack
-            sx={{ border: 1, minWidth: 200, pl: 1 }}
+            sx={{ border: 1, minWidth: 250, p: 2 }}
             justifyContent="center"
           >
             <Typography>{el.episode}</Typography>

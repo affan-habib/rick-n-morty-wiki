@@ -23,6 +23,10 @@
   font-family: "TTTravels-Bold-Italic";
   src: url("./assets/fonts/TTTravels-BoldItalic.ttf") format("truetype");
 }
+@font-face {
+  font-family: "TTTravels-Medium";
+  src: url("./assets/fonts/TTTravels-Medium.ttf") format("truetype");
+}
 .span-one {
   font-family: "TTTravels-Bold-Italic";
   font-style: italic;
@@ -49,6 +53,12 @@
   position: absolute;
   top: 0;
   /* left: 50; */
-  right: -150px;
+  right: -30px;
   z-index: -50;
+}
+.home-content {
+  background-image: url("./assets/Spiral\ Element.png");
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
 }

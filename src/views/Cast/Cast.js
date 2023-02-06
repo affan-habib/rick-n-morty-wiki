@@ -69,7 +69,7 @@ const Cast = () => {
         alignItems="center"
         mb={2}
       >
-        <Typography>Meet the Cast</Typography>
+        <Typography variant="h5">Meet the Cast</Typography>
         <Button variant="outlined" onClick={() => navigate("all-cast")}>
           View All
         </Button>
@@ -82,7 +82,7 @@ const Cast = () => {
       >
         {character.results.map((el) => (
           <Box
-            sx={{ border: 1, minWidth: 200, cursor: "pointer" }}
+            sx={{ border: 1, minWidth: 250, cursor: "pointer" }}
             onClick={() => navigate(`cast-details/${el.id}`)}
           >
             <img src={el.image} width="100%" height="200px" />

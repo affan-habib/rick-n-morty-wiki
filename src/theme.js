@@ -111,8 +111,8 @@ const rawTheme = createTheme({
     },
     h5: {
       color: "white",
-      fontWeight: 600,
-      fontSize: "1rem",
+      fontFamily: `'TTTravels-Medium', "sans-serif"`,
+      fontSize: "24px",
       lineHeight: 1.5,
     },
     h6: {
@@ -131,6 +131,7 @@ const rawTheme = createTheme({
       color: "white",
       fontSize: "0.875rem",
       lineHeight: 1.57,
+      fontFamily: `'TTTravels-Medium', "sans-serif"`,
     },
     body2: {
       color: "white",
