@@ -14,7 +14,7 @@ import gender from "../../assets/icons/Gender.svg";
 import origin from "../../assets/icons/origin.svg";
 import location from "../../assets/icons/Location.svg";
 import episodes from "../../assets/icons/episodes.svg";
-export const CastDetails = () => {
+export const CharacterDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -54,7 +54,7 @@ export const CastDetails = () => {
                 size="small"
                 disabled={id == 1}
                 startIcon={<KeyboardDoubleArrowLeft />}
-                onClick={() => navigate(`/cast-details/${parseInt(id) - 1}`)}
+                onClick={() => navigate(`/character/details/${parseInt(id) - 1}`)}
               >
                 Previous
               </Button>
@@ -62,7 +62,7 @@ export const CastDetails = () => {
                 size="small"
                 disabled={id == 20}
                 endIcon={<KeyboardDoubleArrowRight />}
-                onClick={() => navigate(`/cast-details/${parseInt(id) + 1}`)}
+                onClick={() => navigate(`/character/details/${parseInt(id) + 1}`)}
               >
                 Next
               </Button>

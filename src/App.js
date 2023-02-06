@@ -5,8 +5,8 @@ import logo from "./assets/Logo.png";
 import { Box, Stack } from "@mui/material";
 import Home from "./pages/home/Home";
 import "./App.css";
-import AllCast from "./pages/allCast/AllCast";
-import { CastDetails } from "./pages/castDetails/CastDetails";
+import Characters from "./pages/characters/AllCharecters";
+import { CharacterDetails } from "./pages/character-details/CharacterDetails";
 function App() {
   const navigate = useNavigate();
   return (
@@ -21,8 +21,8 @@ function App() {
         </Stack>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/characters" element={<AllCast />} />
-          <Route path="/character/details/:id" element={<CastDetails />} />
+          <Route path="/characters" element={<Characters />} />
+          <Route path="/character/details/:id" element={<CharacterDetails />} />
         </Routes>
       </Suspense>
     </Box>

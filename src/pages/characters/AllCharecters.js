@@ -12,7 +12,7 @@ import { callApi, selectApi } from "../../reducers/apiSlice";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Loader from "../../components/Loader";
-const Cast = () => {
+const AllCharecters = () => {
   const [page, setPage] = useState(1);
   const [view, setView] = useState("character");
   const dispatch = useDispatch();
@@ -91,4 +91,4 @@ const Cast = () => {
   );
 };
 
-export default Cast;
+export default AllCharecters;
