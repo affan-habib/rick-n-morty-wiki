@@ -64,7 +64,7 @@ const AllCharecters = () => {
           <Grid item md={3}>
             {view == "character" && (
               <Box
-                sx={{ cursor: "pointer" }}
+                sx={{ cursor: "pointer", minHeight: "200px" }}
                 onClick={() => navigate(`/character/details/${el.id}`)}
               >
                 <img src={el.image} width="100%" height="200px" />
