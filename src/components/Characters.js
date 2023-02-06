@@ -1,8 +1,4 @@
-import {
-  ArrowCircleLeft,
-  ArrowCircleRight,
-  ArrowLeftRounded,
-} from "@mui/icons-material";
+import { ArrowCircleLeft, ArrowCircleRight } from "@mui/icons-material";
 import { Button, IconButton, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
@@ -80,13 +76,20 @@ const Characters = () => {
         sx={{ overflowX: "hidden" }}
         ref={elementRef}
       >
-        {character.results.map((el) => (
+        {character.results.map((el, index) => (
           <Box
+            key={index}
             sx={{ minWidth: 250, minHeight: 200, cursor: "pointer" }}
             onClick={() => navigate(`character/details/${el.id}`)}
             className="custom-border"
           >
-            <img loading="lazy" src={el.image} width="100%" height="200px" />
+            <img
+              alt={el.name}
+              loading="lazy"
+              src={el.image}
+              width="100%"
+              height="200px"
+            />
             <Typography>{el.name}</Typography>
           </Box>
         ))}

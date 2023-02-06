@@ -16,13 +16,13 @@ function Home() {
           <Stack>
             <Box sx={{ position: "relative" }}>
               <Typography variant="h1" textAlign="center">
-                <img src={bubbleImg} className="bubble" />
+                <img src={bubbleImg} className="bubble" alt="bubble"/>
                 <span className="span-one">The</span>
-                <img src={portalImg} />
+                <img src={portalImg} alt="portal"/>
                 <span className="span-two"> Rick & MORTY </span>
                 <span className="span-three">WIKI</span>
               </Typography>
-              <img src={gunImg} className="gun" />
+              <img src={gunImg} className="gun" alt="gun"/>
             </Box>
             <Stack direction="row" alignItems="center" justifyContent="center">
               <Stack spacing={2} direction="row">

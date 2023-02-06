@@ -17,7 +17,12 @@ function App() {
           justifyContent="center"
           sx={{ cursor: "pointer" }}
         >
-          <img src={logo} className="logo" onClick={() => navigate("/")} />
+          <img
+            src={logo}
+            alt="logo"
+            className="logo"
+            onClick={() => navigate("/")}
+          />
         </Stack>
         <Routes>
           <Route path="/" element={<Home />} />

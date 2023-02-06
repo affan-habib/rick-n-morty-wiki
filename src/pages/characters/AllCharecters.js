@@ -60,14 +60,14 @@ const AllCharecters = () => {
         </Box>
       </Stack>
       <Grid container spacing={2}>
-        {data.results.map((el) => (
-          <Grid item md={3} className="custom-border">
+        {data.results.map((el, index) => (
+          <Grid item md={3} className="custom-border" key={index}>
             {view == "character" && (
               <Box
                 sx={{ cursor: "pointer", minHeight: "200px" }}
                 onClick={() => navigate(`/character/details/${el.id}`)}
               >
-                <img src={el.image} width="100%" height="200px" />
+                <img src={el.image} alt={el.name} width="100%" height="200px" />
               </Box>
             )}
             <Typography>{el.name}</Typography>

@@ -48,7 +48,12 @@ export const CharacterDetails = () => {
         <Grid item md={6}>
           <Stack direction="column" alignItems="center" spacing={2}>
             <Typography variant="h2">{singleCharacter?.name}</Typography>
-            <img src={singleCharacter?.image} height="auto" width="400px" />
+            <img
+              alt={singleCharacter?.name}
+              src={singleCharacter?.image}
+              height="auto"
+              width="400px"
+            />
             <Stack direction="row" spacing={2}>
               <Button
                 size="small"
@@ -76,40 +81,40 @@ export const CharacterDetails = () => {
         <Grid item md={6}>
           <Grid container spacing={2} direction="row">
             <Grid item md={4} className="commmon-design">
-              <img src={status} />
+              <img src={status} alt="status" />
               <Typography>Status</Typography>
               <Typography variant="h3">{singleCharacter?.status}</Typography>
             </Grid>
             <Grid item md={4} className="commmon-design">
-              <img src={species} />
+              <img src={species} alt="species" />
               <Typography>Species</Typography>
               <Typography variant="h3">{singleCharacter?.species}</Typography>
             </Grid>
             <Grid item md={4} className="commmon-design">
-              <img src={gender} />
+              <img src={gender} alt="gender" />
               <Typography>Gender</Typography>
               <Typography variant="h3">{singleCharacter?.gender}</Typography>
             </Grid>
             <Grid item md={12} className="commmon-design">
-              <img src={origin} />
+              <img src={origin} alt="origin" />
               <Typography>Origin</Typography>
               <Typography variant="h3">
                 {singleCharacter?.origin?.name}
               </Typography>
             </Grid>
             <Grid item md={12} className="commmon-design">
-              <img src={location} />
+              <img src={location} alt="location" />
               <Typography>Last Known Location</Typography>
               <Typography variant="h3">
                 {singleCharacter?.location?.name}
               </Typography>
             </Grid>
             <Grid item md={12} className="commmon-design">
-              <img src={episodes} />
+              <img src={episodes} alt="episodes" />
               <Typography variant="h3">Episodes</Typography>
               <ul>
-                {episode.results.map((el) => (
-                  <li>{el.name}</li>
+                {episode.results.map((el, index) => (
+                  <li key={index}>{el.name}</li>
                 ))}
               </ul>
             </Grid>
