@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+import "./assets/fonts/TTTravels-Black.ttf";
 import {
   grey,
   red,
@@ -41,7 +42,7 @@ const rawTheme = createTheme({
     MuiButton: {
       defaultProps: {
         disableRipple: true,
-        variant:"contained"
+        variant: "contained",
         // disableElevation: true,
       },
       styleOverrides: {
@@ -84,10 +85,11 @@ const rawTheme = createTheme({
     fontWeightMedium: 500,
     fontWeightBold: 600,
     h1: {
-      fontWeight: 600,
+      fontFamily: `'TTTravels-bold', "sans-serif"`,
       fontSize: "128px",
       lineHeight: 1.21,
       color: "white",
+      textTransform: "uppercase",
     },
     h2: {
       fontWeight: 600,
@@ -164,7 +166,7 @@ const theme = {
     ...rawTheme.palette,
     background: {
       ...rawTheme.palette.background,
-      default: "#1E1E1E",
+      default: "#191D29",
       placeholder: grey[200],
     },
   },

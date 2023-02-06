@@ -8,23 +8,29 @@ import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 function Home() {
   return (
     <Suspense fallback={<Loader />}>
-      <Box>
+      <Stack maxWidth={1470}>
         <Typography variant="h1">
-          <span className="span-one">The</span> Rick{" "}
-          <span className="span-two">&</span>
+          <span className="span-one">The</span>
+          <span className="span-two"> Rick & MORTY </span>
+          <span className="span-three">WIKI</span>
         </Typography>
-        <Typography variant="h1">MORTY WIKI</Typography>
-        <Stack direction="row" spacing={2} mx={4}>
-          <Button startIcon={<PlayCircleOutlineIcon />} variant="contained">
-            Watch Now
-          </Button>
-          <Typography>
-            Brilliant but boozy scientist Rick hijacks his fretful teenage
-            grandson, Morty, for wild escapades in other worlds and alternate
-            dimensions.
-          </Typography>
+        <Stack direction="row" alignItems="center" justifyContent="center">
+          <Stack spacing={2} direction="row">
+            <Button
+              sx={{ borderRadius: 10, height: 50, width: 150 }}
+              startIcon={<PlayCircleOutlineIcon />}
+              variant="contained"
+            >
+              Watch Now
+            </Button>
+            <Typography sx={{ width: 400, color: "#14D9E5" }}>
+              Brilliant but boozy scientist Rick hijacks his fretful teenage
+              grandson, Morty, for wild escapades in other worlds and alternate
+              dimensions.
+            </Typography>
+          </Stack>
         </Stack>
-      </Box>
+      </Stack>
       <Stack spacing={2}>
         <Cast />
         <Episodes />

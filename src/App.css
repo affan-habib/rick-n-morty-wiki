@@ -9,8 +9,31 @@
 .border-gradient {
   border-style: solid;
   border-width: 5px;
-  border-image: linear-gradient(99.46deg, #9DFE00 -10.9%, #14D9E6 97.14%)
+  border-image: linear-gradient(99.46deg, #9dfe00 -10.9%, #14d9e6 97.14%);
 }
-.span-one::before{
+.span-one::before {
   background-image: "./assets/bubble.png";
+}
+
+@font-face {
+  font-family: "TTTravels-Bold";
+  src: url("./assets/fonts/TTTravels-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "TTTravels-Bold-Italic";
+  src: url("./assets/fonts/TTTravels-BoldItalic.ttf") format("truetype");
+}
+.span-one {
+  font-family: "TTTravels-Bold-Italic";
+  font-style: italic;
+}
+.span-two {
+  background: -webkit-linear-gradient(#9dfe00, #14d9e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.span-three {
+  font-family: "TTTravels-Bold-Italic";
+  font-style: italic;
 }
