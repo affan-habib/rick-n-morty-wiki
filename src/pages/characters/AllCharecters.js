@@ -12,9 +12,11 @@ import { callApi, selectApi } from "../../reducers/apiSlice";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Loader from "../../components/Loader";
+import { useNavigate } from "react-router-dom";
 const AllCharecters = () => {
   const [page, setPage] = useState(1);
   const [view, setView] = useState("character");
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
@@ -61,7 +63,12 @@ const AllCharecters = () => {
         {data.results.map((el) => (
           <Grid item md={3}>
             {view == "character" && (
-              <img src={el.image} width="100%" height="200px" />
+              <Box
+                sx={{ cursor: "pointer" }}
+                onClick={() => navigate(`/character/details/${el.id}`)}
+              >
+                <img src={el.image} width="100%" height="200px" />
+              </Box>
             )}
             <Typography>{el.name}</Typography>
           </Grid>
