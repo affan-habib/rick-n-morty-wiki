@@ -37,7 +37,6 @@ const AllCharecters = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Container maxWidth="xl" m={2}>
-        {loading && <Loader />}
         <Stack
           direction="row"
           justifyContent="space-between"

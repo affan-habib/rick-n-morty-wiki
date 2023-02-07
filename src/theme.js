@@ -1,14 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 import "./assets/fonts/TTTravels-Black.ttf";
-import {
-  grey,
-  red,
-  teal,
-  deepPurple,
-  purple,
-  brown,
-  yellow,
-} from "@mui/material/colors";
+import { grey, red, brown, yellow, orange, pink } from "@mui/material/colors";
 
 const rawTheme = createTheme({
   palette: {
@@ -19,13 +11,13 @@ const rawTheme = createTheme({
     },
     secondary: {
       light: yellow[400],
-      main: teal[300],
-      dark: teal[400],
+      main: yellow[300],
+      dark: yellow[400],
     },
     warning: {
-      light: deepPurple[100],
-      main: deepPurple[500],
-      dark: deepPurple[700],
+      light: orange[100],
+      main: orange[500],
+      dark: orange[700],
     },
     error: {
       light: red[300],
@@ -33,9 +25,9 @@ const rawTheme = createTheme({
       dark: red[400],
     },
     success: {
-      light: purple[400],
-      main: purple[600],
-      dark: purple[700],
+      light: pink[400],
+      main: pink[600],
+      dark: pink[700],
     },
   },
   components: {
@@ -64,7 +56,8 @@ const rawTheme = createTheme({
       styleOverrides: {
         root: {
           "&.Mui-disabled": {
-            color: "#dadada",
+            color: "white",
+            // background: "red",
           },
         },
       },
@@ -100,7 +93,7 @@ const rawTheme = createTheme({
     h3: {
       fontFamily: `'TTTravels-Medium', "sans-serif"`,
       color: "white",
-      fontSize: "1.5rem",
+      fontSize: "1.8rem",
       lineHeight: 1.33,
     },
     h4: {

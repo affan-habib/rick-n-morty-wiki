@@ -52,6 +52,7 @@ const Episodes = () => {
           zIndex: 50,
           left: -30,
           bottom: "50%",
+          opacity: `${arrowDisable ? 0 : 1}`,
         }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, -20);
@@ -90,7 +91,7 @@ const Episodes = () => {
       >
         {episode.results.map((el, index) => (
           <Stack
-          key={index}
+            key={index}
             sx={{ minWidth: 360, p: 2, height: 96 }}
             justifyContent="center"
             className="custom-border-two"

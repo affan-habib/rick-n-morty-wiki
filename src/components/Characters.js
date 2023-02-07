@@ -49,6 +49,7 @@ const Characters = () => {
           zIndex: 50,
           left: -30,
           bottom: "50%",
+          opacity: `${arrowDisable ? 0 : 1}`,
         }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, -20);

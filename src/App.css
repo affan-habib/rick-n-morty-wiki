@@ -12,7 +12,7 @@
   border-image: linear-gradient(99.46deg, #9dfe00 -10.9%, #14d9e6 97.14%);
 }
 .span-one::before {
-  background-image: "./assets/bubble.png";
+  background-image: url("./assets/bubble.png");
 }
 
 @font-face {
@@ -76,10 +76,11 @@
 
 .commmon-design {
   border: 1px solid green;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 10px;
+  padding: 20px;
 }
 .commmon-design img {
+  border-radius: 10px;
   height: 30px;
 }
 .custom-border {
