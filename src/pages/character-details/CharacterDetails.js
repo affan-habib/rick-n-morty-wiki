@@ -1,19 +1,19 @@
+import React, { useEffect } from "react";
+import Loader from "../../components/Loader";
+import { useNavigate, useParams } from "react-router-dom";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import {
   KeyboardDoubleArrowLeft,
   KeyboardDoubleArrowRight,
 } from "@mui/icons-material";
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import Loader from "../../components/Loader";
-import { callApi, selectApi } from "../../reducers/apiSlice";
 import status from "../../assets/icons/Status.svg";
 import species from "../../assets/icons/Species.svg";
 import gender from "../../assets/icons/Gender.svg";
 import origin from "../../assets/icons/origin.svg";
 import location from "../../assets/icons/Location.svg";
 import episodes from "../../assets/icons/episodes.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { callApi, selectApi } from "../../reducers/apiSlice";
 const CharacterDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

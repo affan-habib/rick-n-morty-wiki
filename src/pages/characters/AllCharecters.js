@@ -1,18 +1,11 @@
-import {
-  Box,
-  Container,
-  Grid,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { callApi, selectApi } from "../../reducers/apiSlice";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader";
+import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import Loader from "../../components/Loader";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { callApi, selectApi } from "../../reducers/apiSlice";
 const AllCharecters = () => {
   const [page, setPage] = useState(1);
   const [view, setView] = useState("character");
@@ -63,7 +56,10 @@ const AllCharecters = () => {
             <option value="location">Location</option>
             <option value="episode">Episodes</option>
           </select>
-          <input type="text" onChange={(e) => setSearchInput(e.target.value)} />
+          <input
+            type="search"
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
         </Box>
       </Stack>
       <Stack direction="row" flexWrap="wrap" justifyContent="space-between">
