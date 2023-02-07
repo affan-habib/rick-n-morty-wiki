@@ -1,8 +1,4 @@
-import {
-  ArrowCircleLeft,
-  ArrowCircleRight,
-  ArrowLeftRounded,
-} from "@mui/icons-material";
+import { ArrowCircleLeft, ArrowCircleRight } from "@mui/icons-material";
 import { Button, IconButton, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
@@ -80,7 +76,7 @@ const Characters = () => {
         sx={{ overflowX: "hidden" }}
         ref={elementRef}
       >
-        {character.results.map((el) => (
+        {character.results.map((el, index) => (
           <Box
             sx={{ minWidth: 290, minHeight: 296, cursor: "pointer" }}
             onClick={() => navigate(`character/details/${el.id}`)}

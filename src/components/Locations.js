@@ -1,13 +1,8 @@
-import {
-  ArrowCircleLeft,
-  ArrowCircleRight,
-  ArrowLeftRounded,
-} from "@mui/icons-material";
+import { ArrowCircleLeft, ArrowCircleRight } from "@mui/icons-material";
 import { Button, IconButton, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { callApi, selectApi } from "../reducers/apiSlice";
 
 const Locations = () => {
@@ -72,7 +67,7 @@ const Locations = () => {
         sx={{ overflowX: "hidden" }}
         ref={elementRef}
       >
-        {location.results.map((el) => (
+        {location.results.map((el, index) => (
           <Stack
             sx={{ minWidth: 360, p: 2, height: 96 }}
             justifyContent="center"

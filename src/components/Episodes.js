@@ -76,7 +76,7 @@ const Episodes = () => {
         sx={{ overflowX: "hidden" }}
         ref={elementRef}
       >
-        {episode.results.map((el) => (
+        {episode.results.map((el, index) => (
           <Stack
             sx={{ minWidth: 360, p: 2, height: 96 }}
             justifyContent="center"
