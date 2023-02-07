@@ -1,0 +1,1 @@
+live at https://rick-n-morty-wikii.netlify.app/
