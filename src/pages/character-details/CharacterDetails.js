@@ -57,6 +57,7 @@ export const CharacterDetails = () => {
             <Stack direction="row" spacing={2}>
               <Button
                 size="small"
+                variant="outlined"
                 disabled={id == 1}
                 startIcon={<KeyboardDoubleArrowLeft />}
                 onClick={() =>
@@ -66,6 +67,7 @@ export const CharacterDetails = () => {
                 Previous
               </Button>
               <Button
+                variant="outlined"
                 size="small"
                 disabled={id == 20}
                 endIcon={<KeyboardDoubleArrowRight />}

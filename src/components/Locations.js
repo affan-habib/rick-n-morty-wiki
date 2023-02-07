@@ -42,7 +42,13 @@ const Locations = () => {
   return (
     <Box sx={{ position: "relative" }}>
       <IconButton
-        sx={{ position: "absolute", top: 45, zIndex: 50, left: -30 }}
+        sx={{
+          position: "absolute",
+          top: 90,
+          zIndex: 50,
+          left: -30,
+          bottom: "50%",
+        }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, -20);
         }}
@@ -51,7 +57,13 @@ const Locations = () => {
         <ArrowCircleLeft fontSize="large" />
       </IconButton>
       <IconButton
-        sx={{ position: "absolute", top: 48, zIndex: 50, right: -30 }}
+        sx={{
+          position: "absolute",
+          top: 100,
+          zIndex: 50,
+          right: -30,
+          bottom: "50%",
+        }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, 20);
         }}
