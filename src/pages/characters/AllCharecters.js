@@ -89,7 +89,7 @@ const AllCharecters = () => {
           >
             <ArrowCircleLeftIcon />
           </IconButton>
-          <span>{page}</span>
+          <span className="page-number">{page}</span>
           <IconButton
             disabled={!data.info.next || page == data.info.pages}
             onClick={() => setPage(page + 1)}

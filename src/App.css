@@ -76,9 +76,8 @@
 
 .commmon-design {
   border: 1px solid green;
-  max-height: 300px;
-  overflow: hidden;
-  padding: 20px;
+  border-radius: 5px;
+  padding: 10px;
 }
 .commmon-design img {
   height: 30px;
@@ -93,4 +92,12 @@
 }
 .custom-border img {
   border-radius: 10px;
+}
+.page-number {
+  padding: 10px 30px;
+  border: 1px solid green;
+}
+.episode-list {
+  max-height: 150px;
+  overflow-y: scroll;
 }

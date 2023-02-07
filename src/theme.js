@@ -98,7 +98,7 @@ const rawTheme = createTheme({
       lineHeight: 1.27,
     },
     h3: {
-      fontWeight: 600,
+      fontFamily: `'TTTravels-Medium', "sans-serif"`,
       color: "white",
       fontSize: "1.5rem",
       lineHeight: 1.33,

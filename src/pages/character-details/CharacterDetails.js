@@ -2,7 +2,7 @@ import {
   KeyboardDoubleArrowLeft,
   KeyboardDoubleArrowRight,
 } from "@mui/icons-material";
-import { Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -82,43 +82,55 @@ export const CharacterDetails = () => {
         </Grid>
         <Grid item md={6}>
           <Grid container spacing={2} direction="row">
-            <Grid item md={4} className="commmon-design">
-              <img src={status} alt="status" />
-              <Typography>Status</Typography>
-              <Typography variant="h3">{singleCharacter?.status}</Typography>
+            <Grid item md={4}>
+              <Box className="commmon-design">
+                <img src={status} alt="status" />
+                <Typography>Status</Typography>
+                <Typography variant="h3">{singleCharacter?.status}</Typography>
+              </Box>
             </Grid>
-            <Grid item md={4} className="commmon-design">
-              <img src={species} alt="species" />
-              <Typography>Species</Typography>
-              <Typography variant="h3">{singleCharacter?.species}</Typography>
+            <Grid item md={4}>
+              <Box className="commmon-design">
+                <img src={species} alt="species" />
+                <Typography>Species</Typography>
+                <Typography variant="h3">{singleCharacter?.species}</Typography>
+              </Box>
             </Grid>
-            <Grid item md={4} className="commmon-design">
-              <img src={gender} alt="gender" />
-              <Typography>Gender</Typography>
-              <Typography variant="h3">{singleCharacter?.gender}</Typography>
+            <Grid item md={4}>
+              <Box className="commmon-design">
+                <img src={gender} alt="gender" />
+                <Typography>Gender</Typography>
+                <Typography variant="h3">{singleCharacter?.gender}</Typography>
+              </Box>
             </Grid>
-            <Grid item md={12} className="commmon-design">
-              <img src={origin} alt="origin" />
-              <Typography>Origin</Typography>
-              <Typography variant="h3">
-                {singleCharacter?.origin?.name}
-              </Typography>
+            <Grid item md={12}>
+              <Box className="commmon-design">
+                <img src={origin} alt="origin" />
+                <Typography>Origin</Typography>
+                <Typography variant="h3">
+                  {singleCharacter?.origin?.name}
+                </Typography>
+              </Box>
             </Grid>
-            <Grid item md={12} className="commmon-design">
-              <img src={location} alt="location" />
-              <Typography>Last Known Location</Typography>
-              <Typography variant="h3">
-                {singleCharacter?.location?.name}
-              </Typography>
+            <Grid item md={12}>
+              <Box className="commmon-design">
+                <img src={location} alt="location" />
+                <Typography>Last Known Location</Typography>
+                <Typography variant="h3">
+                  {singleCharacter?.location?.name}
+                </Typography>
+              </Box>
             </Grid>
-            <Grid item md={12} className="commmon-design">
-              <img src={episodes} alt="episodes" />
-              <Typography variant="h3">Episodes</Typography>
-              <ul>
-                {episode.results.map((el, index) => (
-                  <li key={index}>{el.name}</li>
-                ))}
-              </ul>
+            <Grid item md={12}>
+              <Box className="commmon-design">
+                <img src={episodes} alt="episodes" />
+                <Typography variant="h3">Episodes</Typography>
+                <ul className="episode-list">
+                  {episode.results.map((el, index) => (
+                    <li key={index}>{el.name}</li>
+                  ))}
+                </ul>
+              </Box>
             </Grid>
           </Grid>
         </Grid>
