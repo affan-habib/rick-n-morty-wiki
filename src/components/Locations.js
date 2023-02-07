@@ -88,7 +88,7 @@ const Locations = () => {
             className="custom-border-two"
           >
             <Typography>#{el.id}</Typography>
-            <Typography>{el.name}</Typography>
+            <Typography variant="subtitle1">{el.name}</Typography>
           </Stack>
         ))}
       </Stack>

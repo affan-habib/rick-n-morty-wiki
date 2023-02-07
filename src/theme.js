@@ -56,7 +56,7 @@ const rawTheme = createTheme({
       styleOverrides: {
         root: {
           "&.Mui-disabled": {
-            color: "white",
+            color: "#fff",
             // background: "red",
           },
         },
@@ -132,10 +132,10 @@ const rawTheme = createTheme({
       lineHeight: 1.66,
     },
     subtitle1: {
-      fontSize: "0.875rem",
+      fontSize: "1.1rem",
       color: "white",
-      fontWeight: 600,
       lineHeight: 1.57,
+      fontFamily: `'TTTravels-Medium', "sans-serif"`,
     },
     subtitle2: {
       color: "white",

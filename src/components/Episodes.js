@@ -1,13 +1,8 @@
-import {
-  ArrowCircleLeft,
-  ArrowCircleRight,
-  ArrowLeftRounded,
-} from "@mui/icons-material";
-import { Button, IconButton, Stack, Typography } from "@mui/material";
+import { ArrowCircleLeft, ArrowCircleRight } from "@mui/icons-material";
+import { IconButton, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { callApi, selectApi } from "../reducers/apiSlice";
 
 const Episodes = () => {
