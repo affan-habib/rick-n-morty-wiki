@@ -54,6 +54,8 @@ const Characters = () => {
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, -20);
         }}
+        variant="outlined"
+        color="warning"
         disabled={arrowDisable}
       >
         <ArrowCircleLeft fontSize="large" />
