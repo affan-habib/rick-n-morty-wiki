@@ -6,7 +6,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { callApi, selectApi } from "../../reducers/apiSlice";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
@@ -16,6 +16,8 @@ import { useNavigate } from "react-router-dom";
 const AllCharecters = () => {
   const [page, setPage] = useState(1);
   const [view, setView] = useState("character");
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -33,7 +35,12 @@ const AllCharecters = () => {
       info: [],
     },
   } = useSelector(selectApi);
-
+  useEffect(() => {
+    const result = data.results.filter((item) =>
+      item.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
+    setSearchResults(result);
+  }, [searchInput, data]);
   return (
     <Container maxWidth="xl" m={2}>
       {loading && <Loader />}
@@ -56,14 +63,14 @@ const AllCharecters = () => {
             <option value="location">Location</option>
             <option value="episode">Episodes</option>
           </select>
-          <input type="text" />
+          <input type="text" onChange={(e) => setSearchInput(e.target.value)} />
         </Box>
       </Stack>
       <Stack direction="row" flexWrap="wrap" justifyContent="space-between">
-        {data.results.map((el) => (
+        {searchResults.length == 0 && "No Results"}
+        {searchResults.map((el, index) => (
           <Box
-            item
-            md={3}
+            key={index}
             className="custom-border"
             sx={{ minWidth: 290, minHeight: 296, mb: 2 }}
           >
