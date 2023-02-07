@@ -14,7 +14,7 @@ import gender from "../../assets/icons/Gender.svg";
 import origin from "../../assets/icons/origin.svg";
 import location from "../../assets/icons/Location.svg";
 import episodes from "../../assets/icons/episodes.svg";
-export const CharacterDetails = () => {
+const CharacterDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -138,3 +138,5 @@ export const CharacterDetails = () => {
     </Container>
   );
 };
+
+export default CharacterDetails;

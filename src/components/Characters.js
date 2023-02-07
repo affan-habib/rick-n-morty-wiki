@@ -63,7 +63,7 @@ const Characters = () => {
           top: 200,
           zIndex: 50,
           right: -30,
-          bottom: '50%',
+          bottom: "50%",
         }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, 20);
@@ -90,6 +90,7 @@ const Characters = () => {
       >
         {character.results.map((el, index) => (
           <Box
+            key={index}
             sx={{ minWidth: 290, minHeight: 296, cursor: "pointer" }}
             onClick={() => navigate(`character/details/${el.id}`)}
             className="custom-border"

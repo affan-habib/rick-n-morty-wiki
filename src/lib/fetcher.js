@@ -10,7 +10,7 @@ const fetcher = async (route, options = {}) => {
     );
   }
 
-  console.log("fetching ....", url);
+  // console.log("fetching ....", url);
 
   const response = await fetch(url, {
     headers: {
