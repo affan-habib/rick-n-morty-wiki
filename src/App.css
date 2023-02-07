@@ -84,6 +84,13 @@
   height: 30px;
 }
 .custom-border {
-  border: 1px solid green;
-  padding: 20px;
+  background-image: url("./assets/bg.svg");
+  padding: 15px;
+}
+.custom-border-two {
+  background-image: url("./assets/bg-two.svg");
+  padding: 15px;
+}
+.custom-border img {
+  border-radius: 10px;
 }

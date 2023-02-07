@@ -78,9 +78,9 @@ const Episodes = () => {
       >
         {episode.results.map((el) => (
           <Stack
-            sx={{ minWidth: 250, p: 2 }}
+            sx={{ minWidth: 360, p: 2, height: 96 }}
             justifyContent="center"
-            className="custom-border"
+            className="custom-border-two"
           >
             <Typography>{el.episode}</Typography>
             <Typography>{el.name}</Typography>

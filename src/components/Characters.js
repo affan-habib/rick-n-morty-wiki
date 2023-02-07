@@ -82,11 +82,11 @@ const Characters = () => {
       >
         {character.results.map((el) => (
           <Box
-            sx={{ minWidth: 250, minHeight: 200, cursor: "pointer" }}
+            sx={{ minWidth: 290, minHeight: 296, cursor: "pointer" }}
             onClick={() => navigate(`character/details/${el.id}`)}
             className="custom-border"
           >
-            <img loading="lazy" src={el.image} width="100%" height="200px" />
+            <img loading="lazy" src={el.image} width="100%" height="230" />
             <Typography>{el.name}</Typography>
           </Box>
         ))}

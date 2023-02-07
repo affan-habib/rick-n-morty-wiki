@@ -59,21 +59,26 @@ const AllCharecters = () => {
           <input type="text" />
         </Box>
       </Stack>
-      <Grid container spacing={2}>
+      <Stack direction="row" flexWrap="wrap" justifyContent="space-between">
         {data.results.map((el) => (
-          <Grid item md={3} className="custom-border">
+          <Box
+            item
+            md={3}
+            className="custom-border"
+            sx={{ minWidth: 290, minHeight: 296, mb: 2 }}
+          >
             {view == "character" && (
               <Box
-                sx={{ cursor: "pointer", minHeight: "200px" }}
+                sx={{ cursor: "pointer" }}
                 onClick={() => navigate(`/character/details/${el.id}`)}
               >
-                <img src={el.image} width="100%" height="200px" />
+                <img src={el.image} width="100%" height="230px" />
               </Box>
             )}
             <Typography>{el.name}</Typography>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Stack>
       <Stack direction="row" justifyContent="center" alignItems="center">
         <Box py={2}>
           <span>Page</span>

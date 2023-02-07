@@ -56,7 +56,7 @@ const Locations = () => {
         <ArrowCircleLeft fontSize="large" />
       </IconButton>
       <IconButton
-        sx={{ position: "absolute", top: 45, zIndex: 50, right: -30 }}
+        sx={{ position: "absolute", top: 48, zIndex: 50, right: -30 }}
         onClick={() => {
           handleHorizantalScroll(elementRef.current, 25, 200, 20);
         }}
@@ -74,9 +74,9 @@ const Locations = () => {
       >
         {location.results.map((el) => (
           <Stack
-            sx={{ minWidth: 250, p: 2 }}
+            sx={{ minWidth: 360, p: 2, height: 96 }}
             justifyContent="center"
-            className="custom-border"
+            className="custom-border-two"
           >
             <Typography>#{el.id}</Typography>
             <Typography>{el.name}</Typography>
