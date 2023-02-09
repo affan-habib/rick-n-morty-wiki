@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 import "./assets/fonts/TTTravels-Black.ttf";
 import { grey, red, brown, yellow, orange, pink } from "@mui/material/colors";
+import MenuItem from "@mui/material/MenuItem";
 
 const rawTheme = createTheme({
   palette: {
@@ -47,6 +48,27 @@ const rawTheme = createTheme({
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          borderRadius: 0,
+          backgroundColor: "#14D9E5",
+          color: "#fff",
+          minWidth: 150,
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#14D9E5",
+          color: "white",
+          "&.Mui-selected": {
+            backgroundColor: "#14D9E5",
+          },
+        },
+      },
+    },
     MuiIconButton: {
       defaultProps: {
         disableRipple: true,
@@ -62,7 +84,16 @@ const rawTheme = createTheme({
         },
       },
     },
-
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "white",
+          color: "red",
+          minWidth: 150,
+          borderRadius: 0,
+        },
+      },
+    },
     MuiPaper: {
       styleOverrides: {
         root: {

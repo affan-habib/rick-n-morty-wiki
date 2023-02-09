@@ -1,11 +1,22 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader";
-import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  IconButton,
+  InputAdornment,
+  MenuItem,
+  Select,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import { useDispatch, useSelector } from "react-redux";
 import { callApi, selectApi } from "../../reducers/apiSlice";
+import { Search } from "@mui/icons-material";
 const AllCharecters = () => {
   const [page, setPage] = useState(1);
   const [view, setView] = useState("character");
@@ -49,19 +60,28 @@ const AllCharecters = () => {
               ? "All Locations"
               : "Episodes"}
           </Typography>
-          <Box>
-            <select
+          <Box mb={4}>
+            <Select
+              value={view}
               onChange={(e) => {
                 setView(e.target.value);
                 setPage(1);
               }}
             >
-              <option value="character">Charecter</option>
-              <option value="location">Location</option>
-              <option value="episode">Episodes</option>
-            </select>
-            <input
+              <MenuItem value="character">Charecter</MenuItem>
+              <MenuItem value="location">Location</MenuItem>
+              <MenuItem value="episode">Episodes</MenuItem>
+            </Select>
+            <TextField
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Search />
+                  </InputAdornment>
+                ),
+              }}
               type="search"
+              placeholder="Search"
               onChange={(e) => setSearchInput(e.target.value)}
             />
           </Box>
