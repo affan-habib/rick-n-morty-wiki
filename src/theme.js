@@ -55,6 +55,7 @@ const rawTheme = createTheme({
           backgroundColor: "#14D9E5",
           color: "#fff",
           minWidth: 150,
+          borderRadius: "50px 0 0 50px",
         },
       },
     },
